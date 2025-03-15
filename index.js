@@ -10,11 +10,14 @@ const app=express();
 
 
 app.use(cors({
-    origin: "https://mernauth4-frontend.vercel.app", // Allow requests from this frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-    credentials: true, // Allow cookies if needed
+    origin: "https://mernauth4-frontend.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add OPTIONS
+    //allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
+    credentials: true, // Allow cookies
 }));
 
+// ✅ Manually handle preflight requests
+app.options("*", cors());
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());

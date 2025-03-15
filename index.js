@@ -10,7 +10,7 @@ const app=express();
 
 
 app.use(cors({
-    origin: "http://localhost:5173", // Allow requests from this frontend URL
+    origin: "https://mernauth4-frontend.vercel.app/", // Allow requests from this frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
     credentials: true, // Allow cookies if needed
 }));

@@ -10,7 +10,7 @@ const app=express();
 
 
 app.use(cors({
-    origin: "https://mernauth4-frontend.vercel.app",
+    origin: "*", //"https://mernauth4-frontend.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add OPTIONS
     allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
     credentials: true, // Allow cookies
